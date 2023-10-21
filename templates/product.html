@@ -1,0 +1,47 @@
+{% extends 'main.html'  %}
+
+{% block content %}
+
+<div class="text-center">
+<h1>Product</h1>
+<hr>
+</div>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in products %}
+<tr>
+  <td>
+    {{i.name}}
+  </td>
+  <td>
+    {{i.price}}
+  </td>
+  <td>
+    {{i.category}}
+  </td>
+    
+ 
+</tr>
+
+{% endfor %}
+
+
+
+
+
+      
+     
+     
+    </tbody>
+  </table>
+
+
+
+{% endblock %}

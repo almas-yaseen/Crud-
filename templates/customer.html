@@ -1,0 +1,57 @@
+{% extends 'main.html'  %}
+
+{% block content %}
+
+
+<div class="row mt-5">
+    <div class="col-md-12 text-left">
+        <button type="button" class="btn btn-success">Update customer</button>
+        <button type="button" class="btn btn-danger">Delete customer</button>
+        <h2>Contact</h2>
+        <p>Email:{{customer.email}}</p>
+        <p>Phone:{{customer.phone}}</p>
+    </div>
+</div>
+<div class="container">
+    <button type="button" class="btn btn-primary">Search</button>
+</div>
+
+<div class="text-center">
+<h1>Product</h1>
+<hr>
+</div>
+<table class="table">
+   
+      <tr>
+        <th>Product</th>
+        <th>Category</th>
+        <th>Date ordered</th>
+        <th>Status</th>
+        <th>Update</th>
+        <th>Remove</th>
+      </tr>
+
+      {% for order in orders %}
+      <tr>
+        <td>{{order.product}}</td>
+        <td>{{order.product.category}}</td>
+        <td>{{order.date_created}}</td>
+        <td><a href="">Update</a></td>
+        <td><a href="">Remove</a></td>
+      </tr>
+
+
+      {% endfor %}
+    
+    <tbody>
+      
+     
+     
+  </table>
+
+
+  <h5>Total order:{{orders_count}}</h5>
+
+
+
+{% endblock %}
