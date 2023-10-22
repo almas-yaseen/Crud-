@@ -5,8 +5,8 @@
 
 <div class="row mt-5">
     <div class="col-md-12 text-left">
-        <button type="button" class="btn btn-success">Update customer</button>
-        <button type="button" class="btn btn-danger">Delete customer</button>
+        <button type="button" href="" class="btn btn-success">Update customer</button>
+<a href="{% url 'createOrder' customer.id %}">Place order</a>
         <h2>Contact</h2>
         <p>Email:{{customer.email}}</p>
         <p>Phone:{{customer.phone}}</p>
@@ -36,8 +36,10 @@
         <td>{{order.product}}</td>
         <td>{{order.product.category}}</td>
         <td>{{order.date_created}}</td>
-        <td><a href="">Update</a></td>
-        <td><a href="">Remove</a></td>
+        <td>{{order.status}}</td>
+        <td><a href="{% url 'updateOrder' order.id %}">Update</a></td>
+        <td><a href="{% url 'delete' order.id %}">Delete</a></td>
+        
       </tr>
 
 

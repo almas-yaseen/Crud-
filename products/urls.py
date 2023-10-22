@@ -6,7 +6,9 @@ from .import views
 urlpatterns = [
     path('', views.home,name='home'),
     path('products/', views.products,name='products'),
-    path('customer/<str:id>/', views.customer,name='customer'),
-    path('createOrder/',views.createOrder,name='createOrder')
+    path('customer/<str:pk>/', views.customer,name='customer'),
+    path('createOrder/<str:pk>/',views.createOrder,name='createOrder'),
+    path('updateOrder/<str:pk>/',views.updateOrder,name='updateOrder'),
+    path('delete/<str:pk>/',views.delete,name='delete'),
     
 ]
